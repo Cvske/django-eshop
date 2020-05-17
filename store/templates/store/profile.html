@@ -1,0 +1,26 @@
+{% extends 'store/main.html' %}
+{% block content %}
+<style>
+    .media-body{
+        text-align: center;
+    }
+    .button{
+        background-color: #008CBA;
+    }
+</style>
+ <div class="media-body">
+            <br>
+         <h2 class="account-heading"><b>Name: </b>{{ customer.name }}</h2>
+            <br>
+          <p class="text-secondary"><b>Email: </b>{{ customer.email }}</p>
+          <p class="text-secondary"><b>Zipcode: </b>{{ customer.zipcode }}</p>
+          <p class="text-secondary"><b>City: </b>{{ customer.city }}</p>
+     <p class="text-secondary"><b>Address: </b>{{customer.street}} {{customer.streetNumber}}/{{customer.apartmentNumber}}</p>
+     <div>
+    <a class="btn btn-info" href="{% url 'edit_profile' %}">Edit</a>
+         <br><br>
+         <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+</div>
+ </div>
+
+{% endblock %}

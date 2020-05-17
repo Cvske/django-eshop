@@ -1,0 +1,25 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-md-6">
+        <div class = "card card-body">
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                <input type="submit" name = "Submit">
+                <div>
+                   <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
